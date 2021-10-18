@@ -1,0 +1,41 @@
+@page
+@model ProyectoCiclo3.App.Frontend.Pages.FormServicioModel 
+@{
+}
+<div class="text-center">
+      <form method="post">
+            <label  style="font-family: 'Poppins', sans-serif ; color: #0E2431;font-weight: bold;" for="origen" class="form-label " >Origen:</label>
+            <select name="origen" class="form-control">
+        <option value="">-</option>
+        @foreach (var usuario in Model.Usuarios)
+    {
+        <option value="@usuario.id">@usuario.nombres - @usuario.apellidos </option>
+    }
+    </select>
+
+            <label for="detino" class="form-label">Destino:</label>
+            <select name="destino" class="form-control ">
+        <option value="">-</option>
+        @foreach (var usuario in Model.Usuarios)
+    {
+        <option value="@usuario.id"> @usuario.dirección</option>
+    }
+    </select>
+
+            
+            <label for="encomienda" class="form-label">Encomienda:</label>
+            <select name="encomienda" class="form-control">
+        <option value="">-</option>
+        @foreach (var encomienda in Model.Encomiendas)
+    {
+        <option value="@encomienda.id">@encomienda.descripción - @encomienda.peso - @encomienda.tipo - @encomienda.presentación</option>
+    }
+    </select>
+            <label for="hora" class="form-label">Hora:</label>
+            <input type="time" class="form-control" id="hora" name="hora" placeholder="Hora" required>
+            <label for="fecha" class="form-label">Fecha:</label>
+            <input type="date" class="form-control" id="fecha" name="fecha" placeholder="Fecha" required>
+            <hr>
+            <button type="submit" class="btn btn-success">Enviar</button>
+      </form>
+</div>

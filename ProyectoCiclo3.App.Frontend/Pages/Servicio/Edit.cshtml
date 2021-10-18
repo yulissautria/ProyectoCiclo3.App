@@ -1,0 +1,50 @@
+@page
+@model ProyectoCiclo3.App.Frontend.Pages.EditServicioModel
+@{
+  var servit = Model.servicios;
+}
+
+<div class="text-center">
+  <form method="post">
+    <input type="number" class="form-control d-none" id="id" name="id" placeholder="Id" asp-for="@servit.id">
+    <label for="origen" class="form-label">Origen:</label>
+    <select name="origen" class="form-control">
+      <option value="">-</option>
+        @foreach (var usuario in Model.Usuarios)
+        {
+        <option value="@usuario.id">@usuario.nombres - @usuario.apellidos </option>
+
+
+
+        }
+    </select>
+    <label for="detino" class="form-label">Destino:</label>
+    <select name="destino" class="form-control">
+      <option value="">-</option>
+        @foreach (var usuario in Model.Usuarios)
+        {
+        <option value="@usuario.id">  @usuario.dirección</option>
+
+
+
+        }
+    </select>
+    <label for="encomienda" class="form-label">Encomienda:</label>
+    <select name="encomienda" class="form-control">
+      <option value="">-</option>
+        @foreach (var encomienda in Model.Encomiendas)
+        {
+        <option value="@encomienda.id">@encomienda.descripción - @encomienda.peso - @encomienda.tipo -
+            @encomienda.presentación</option>
+
+
+
+        }
+      <label for="hora" class="form-label">Hora:</label>
+      <input type="time" class="form-control" id="hora" name="hora" placeholder="Hora">
+      <label for="fecha" class="form-label">Fecha:</label>
+      <input type="date" class="form-control" id="fecha" name="fecha" placeholder="Fecha">
+      <hr>
+      <button type="submit" class="btn btn-success">Enviar</button>
+  </form>
+</div>

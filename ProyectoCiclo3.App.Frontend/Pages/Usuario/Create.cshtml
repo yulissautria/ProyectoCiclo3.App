@@ -1,0 +1,56 @@
+@page
+@model ProyectoCiclo3.App.Frontend.Pages.FormUsuarioModel
+@{
+}
+<div class="text-center">
+    <form method="post">
+      
+     @* <label for="id" class="form-label">Id:</label>
+      <input type="number" class="form-control" id="nombres" placeholder="Id" asp-for="Usuario.id">*@
+      
+<label for="nombre" class="form-label">Nombres:</label>
+      <input type="text" class="form-control" id="nombres" placeholder="Nombres" asp-for="Usuario.nombres" required>
+
+      <label for="apellidos" class="form-label">Apellidos:</label>
+      <input type="text" class="form-control" id="apellidos" placeholder="Apellidos" asp-for="Usuario.apellidos" required>
+
+      <label for="dirección" class="form-label">Dirección:</label>
+      <input type="text" class="form-control" id="dirección" placeholder="Dirección" asp-for="Usuario.dirección" required>
+      
+      <label for="teléfono" class="form-label">Teléfono:</label>
+      <input type="text" class="form-control" id="teléfono" placeholder="Teléfono" asp-for="Usuario.teléfono" required>
+      
+      
+
+      <hr>
+      <button type="submit" class="btn btn-success">Enviar</button>
+    </form>
+  </div>
+
+<!-- 
+ 
+<div class="text-center">
+<form method="post">
+  
+    
+
+  <label for="id" class="form-label">Id:</label>
+  <input type="text" class="form-control" id="id" name="id" placeholder="Id" >
+
+
+  <label for="nombres" class="form-label">Nombres:</label>
+  <input type="text" class="form-control" id="nombres" name="nombres" placeholder="Nombres">
+  
+  <label for="apellidos" class="form-label">Apellidos:</label>
+  <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Apellidos">
+
+  <label for="dirección" class="form-label">Dirección:</label>
+  <input type="text" class="form-control" id="dirección" name="dirección" placeholder="Dirección">
+
+  <label for="teléfono" class="form-label">Teléfono:</label>
+  <input type="tel" class="form-control" id="teléfono" name="teléfono" placeholder="Teléfono">
+
+  <hr>
+  <button type="submit" class="btn btn-success">Enviar</button>
+</form>
+</div> -->

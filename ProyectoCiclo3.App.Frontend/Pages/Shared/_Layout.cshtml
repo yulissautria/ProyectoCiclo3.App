@@ -1,0 +1,577 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ProyectoCiclo3.App.Frontend</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" /> 
+</head>
+<!--____________________________________________________________ -->
+
+<body >
+  
+    <header>
+      
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3"> </nav>
+          
+            <span class="navbar-toggler-icon"></span>
+  
+           <a class="icon-home" style="margin: 10px" asp-area="" asp-page="/Index">Inicio</a>
+                  @Html.Partial("_LoginPartial")
+
+            @using Microsoft.AspNetCore.Identity
+            @inject SignInManager<IdentityUser> SignInManager
+            @if (SignInManager.IsSignedIn(User))
+            {
+
+            <ul class="navbar-nav flex-grow-1"> </ul>
+            }
+
+
+              <!--  <button class="" type="" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation"></button> -->
+                        <style type="text/css">
+                       
+.icon-home {                
+
+background-color: #13AFDF;
+border-radius: 6px;
+border: none;
+color: #000000;
+cursor: pointer;
+font-size: 16px;
+padding: 16px 24px;
+text-align: center;
+text-transform: uppercase;
+width: auto;
+}
+.icon-home-button:before {
+background-color: #000000;
+color: #000000;
+}
+ 
+
+ <!--box-sizing: border-box;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: transparent;
+  border: 2px;
+  border-radius: 0.6em;
+  color: #e74c3c;
+  cursor: pointer;
+  display: inline-block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;-->
+  <!--webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  font-size: 1.25em;
+  font-weight: 400;
+  line-height: 1;
+  margin: 20px;
+  padding: 10px 10px;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  width:200px;
+  box-shadow: 0px 3px 0px;
+}
+
+
+.btn:hover, .btn:focus {
+  color: #3498db;
+  outline: 0;
+}
+
+.btnmodificado {
+  border-color: #3498db;
+  color: #fff;
+  box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+.btnmodificado:hover {
+  box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+} -->
+   
+</style>
+<!--____________________________________________________________ -->
+
+                   
+            <span class="navbar-toggler-icon"></span>
+               <!-- </button> -->
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"></div>
+                    <ul class="navbar-nav flex-grow-1"></ul>
+                        
+                            <a class="neon-button" style="margin: 10px" asp-page="/Usuario/Create">Crear Usuario</a> 
+
+                         <style type="text/css">
+                                  
+.neon-button {
+font-size: 1rem;
+display: inline-block;
+cursor: pointer;
+text-decoration: none;
+color: #007bff;
+border: #007bff solid;
+padding: 0.25em 1em;
+border-radius: 0.25em;
+text-shadow: 0 0 0.125em #000, 0 0 0.45em currentColor;
+box-shadow: inset 0 0 0.5em 0 #007bff, 0 0 0.5em 0 hsl#007bff;
+position: relative;
+}
+
+.neon-button::before {
+pointer-events: none;
+content: "";
+position: absolute;
+background:#007bff;
+top: 120%;
+left: 0;
+width: 100%;
+height: 100%;
+transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+filter: blur(1em);
+opacity: 0.7;
+}
+
+.neon-button::after {
+content: "";
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+box-shadow: 0 0 2em 0.5em #007bff;
+opacity: 0;
+background-color: #007bff;
+z-index: -1;
+transition: opacity 100ms linear;
+}
+
+.neon-button:hover, .neon-button:focus {
+color: hsl(323, 21%, 16%);
+text-shadow: none;
+background-color: #007bff;
+}
+
+.neon-button:hover::before, .neon-button:focus::before {
+opacity: 1;
+}
+
+.neon-button:hover::after, .neon-button:focus::after {
+opacity: 1;
+}
+                          
+                          </style>  
+
+ <!--____________________________________________________________ -->                       
+                                                       
+                            
+<!--"background-color: #4FD1C5;  min-width: 100px;
+ height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+  font-family: 'Cambria', sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #4FD1C5;
+background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;" asp-area="" </a>-->
+
+ <!--____________________________________________________________ -->
+                        <span class="navbar-toggler-icon"></span>
+               <!-- </button> -->
+                
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"></div>
+                        
+                            <a class="neon-button" style="margin: 10px" asp-area="" asp-page="/Usuario/List">Listado de Usuarios</a>
+
+                            <style type="text/css">
+                                  
+.neon-button {
+font-size: 1rem;
+display: inline-block;
+cursor: pointer;
+text-decoration: none;
+color: #007bff;
+border: #007bff solid;
+padding: 0.25em 1em;
+border-radius: 0.25em;
+text-shadow: 0 0 0.125em #000, 0 0 0.45em currentColor;
+box-shadow: inset 0 0 0.5em 0 #007bff, 0 0 0.5em 0 hsl#007bff;
+position: relative;
+}
+
+.neon-button::before {
+pointer-events: none;
+content: "";
+position: absolute;
+background:#007bff;
+top: 120%;
+left: 0;
+width: 100%;
+height: 100%;
+transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+filter: blur(1em);
+opacity: 0.7;
+}
+
+.neon-button::after {
+content: "";
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+box-shadow: 0 0 2em 0.5em #007bff;
+opacity: 0;
+background-color: #007bff;
+z-index: -1;
+transition: opacity 100ms linear;
+}
+
+.neon-button:hover, .neon-button:focus {
+color: hsl(323, 21%, 16%);
+text-shadow: none;
+background-color: #007bff;
+}
+
+.neon-button:hover::before, .neon-button:focus::before {
+opacity: 1;
+}
+
+.neon-button:hover::after, .neon-button:focus::after {
+opacity: 1;
+}
+                          
+                          </style>  
+                        
+                   
+  <!--  </header>-->
+
+    
+                    <span class="navbar-toggler-icon"></span>
+               <!-- </button> -->
+               <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"></div>
+                   <!--  <ul class="navbar-nav flex-grow-1"></ul> -->
+                        
+                            <a class="neon-button" style="margin: 10px" asp-page="/Servicio/Create">Crear Servicio</a> 
+
+                         <style type="text/css">
+                                  
+.neon-button {
+font-size: 1rem;
+display: inline-block;
+cursor: pointer;
+text-decoration: none;
+color: #007bff;
+border: #007bff solid;
+padding: 10px 0px;
+border-radius: 0.25em;
+text-align: center;
+<!--text-shadow: 0 0 0.125em #000, 0 0 0.45em currentColor;-->
+box-shadow: inset 0 0 0.5em 0 #007bff, 0 0 0.5em 0 hsl#007bff;
+position: relative;
+}
+
+.neon-button::before {
+pointer-events: none;
+content: "";
+position: absolute;
+background:#007bff;
+top: 120%;
+left: 0;
+width: 100%;
+height: 100%;
+transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+filter: blur(1em);
+opacity: 0.7;
+}
+
+.neon-button::after {
+content: "";
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+box-shadow: 0 0 2em 0.5em #007bff;
+opacity: 0;
+background-color: #007bff;
+z-index: -1;
+transition: opacity 100ms linear;
+}
+
+.neon-button:hover, .neon-button:focus {
+color: hsl(323, 21%, 16%);
+text-shadow: none;
+background-color: #007bff;
+}
+
+.neon-button:hover::before, .neon-button:focus::before {
+opacity: 1;
+}
+
+.neon-button:hover::after, .neon-button:focus::after {
+opacity: 1;
+}
+                           
+                         
+                          </style> 
+
+<!-- ___________________________________ -->
+
+<span class="navbar-toggler-icon"></span>
+               <!-- </button> -->
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"></div>
+                    
+        
+       <!-- <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3"> -->
+                                                 
+                            <a class="neon-button" style="margin: 10px" asp-area="" asp-page="/Servicio/List">Listado de Servicios</a>
+                            <style type="text/css">
+                                  
+.neon-button {
+font-size: 1rem;
+display: inline-block;
+cursor: pointer;
+text-decoration: none;
+color: #007bff;
+border: #007bff solid;
+padding: 0.25em 1em;
+border-radius: 0.25em;
+text-shadow: 0 0 0.125em #000, 0 0 0.45em currentColor;
+box-shadow: inset 0 0 0.5em 0 #007bff, 0 0 0.5em 0 hsl#007bff;
+position: relative;
+}
+
+.neon-button::before {
+pointer-events: none;
+content: "";
+position: absolute;
+background:#007bff;
+top: 120%;
+left: 0;
+width: 100%;
+height: 100%;
+transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+filter: blur(1em);
+opacity: 0.7;
+}
+
+.neon-button::after {
+content: "";
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+box-shadow: 0 0 2em 0.5em #007bff;
+opacity: 0;
+background-color: #007bff;
+z-index: -1;
+transition: opacity 100ms linear;
+}
+
+.neon-button:hover, .neon-button:focus {
+color: hsl(323, 21%, 16%);
+text-shadow: none;
+background-color: #007bff;
+}
+
+.neon-button:hover::before, .neon-button:focus::before {
+opacity: 1;
+}
+
+.neon-button:hover::after, .neon-button:focus::after {
+opacity: 1;
+}
+                           </nav>
+                           
+                           
+                          </style>           
+               
+        
+    
+<!-- ___________________________________ -->
+
+<span class="navbar-toggler-icon"></span>
+               <!-- </button> -->
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"></div>
+                    
+    
+                <!--    <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3"></nav> -->
+                   <!-- <ul class="navbar-nav flex-grow-1"></ul> -->
+                        
+                            <a class="neon-button" style="margin: 10px" asp-page="/Encomienda/Create">Crear Encomienda</a> 
+
+                         <style type="text/css">
+                                  
+.neon-button {
+font-size: 1rem;
+display: inline-block;
+cursor: pointer;
+text-decoration: none;
+color: #007bff;
+border: #007bff solid;
+padding: 0.25em 1em;
+border-radius: 0.25em;
+text-shadow: 0 0 0.125em #000, 0 0 0.45em currentColor;
+box-shadow: inset 0 0 0.5em 0 #007bff, 0 0 0.5em 0 hsl#007bff;
+position: relative;
+}
+
+.neon-button::before {
+pointer-events: none;
+content: "";
+position: absolute;
+background:#007bff;
+top: 120%;
+left: 0;
+width: 100%;
+height: 100%;
+transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+filter: blur(1em);
+opacity: 0.7;
+}
+
+.neon-button::after {
+content: "";
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+box-shadow: 0 0 2em 0.5em #007bff;
+opacity: 0;
+background-color: #007bff;
+z-index: -1;
+transition: opacity 100ms linear;
+}
+
+.neon-button:hover, .neon-button:focus {
+color: hsl(323, 21%, 16%);
+text-shadow: none;
+background-color: #007bff;
+}
+
+.neon-button:hover::before, .neon-button:focus::before {
+opacity: 1;
+}
+
+.neon-button:hover::after, .neon-button:focus::after {
+opacity: 1;
+}
+                           
+                          </style>  
+
+ <!--_____________________________________ -->            
+
+ <span class="navbar-toggler-icon"></span>
+               <!-- </button> -->
+            
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"></div>
+                                
+                        
+                            <a class="neon-button" style="margin: 10px" asp-area="" asp-page="/Encomienda/List">Listado de Encomiendas</a>
+
+                            <style type="text/css">
+                                  
+.neon-button {
+font-size: 1rem;
+display: inline-block;
+cursor: pointer;
+text-decoration: none;
+color: #007bff;
+border: #007bff solid;
+padding: 0.25em 1em;
+border-radius: 0.25em;
+text-shadow: 0 0 0.125em #000, 0 0 0.45em currentColor;
+box-shadow: inset 0 0 0.5em 0 #007bff, 0 0 0.5em 0 hsl#007bff;
+position: relative;
+}
+
+.neon-button::before {
+pointer-events: none;
+content: "";
+position: absolute;
+background:#007bff;
+top: 120%;
+left: 0;
+width: 100%;
+height: 100%;
+transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+filter: blur(1em);
+opacity: 0.7;
+}
+
+.neon-button::after {
+content: "";
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+box-shadow: 0 0 2em 0.5em #007bff;
+opacity: 0;
+background-color: #007bff;
+z-index: -1;
+transition: opacity 100ms linear;
+}
+
+.neon-button:hover, .neon-button:focus {
+color: hsl(323, 21%, 16%);
+text-shadow: none;
+background-color: #007bff;
+}
+
+.neon-button:hover::before, .neon-button:focus::before {
+opacity: 1;
+}
+
+.neon-button:hover::after, .neon-button:focus::after {
+opacity: 1;
+}
+                           
+                          </style>  
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - ProyectoCiclo3.App.Frontend - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+        
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+    
+</body>
+</html>
